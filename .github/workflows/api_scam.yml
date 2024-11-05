@@ -11,14 +11,6 @@ jobs:
 
 
     steps:
-        - name: Import Secrets
-          id: import-secrets
-          uses: hashicorp/vault-action@v2
-          with:
-            url: ${{ secrets.VAULT_ADDR }}
-            token: ${{ secrets.VAULT_TOKEN }}
-            secrets: |
-                secret/data/ci api-key | API_KEY;
 
         - name: Checkout code
           uses: actions/checkout@v4
